@@ -1,12 +1,14 @@
 @echo off
 mode con:cols=80 lines=50
+title                /**********\Backup e Restaura‡Æo/***************\
 color A
 :INICIO
+cls
 echo.
-echo                         DATA: %DATE%  HORA: %TIME%
+echo                        [DATA: %DATE%  HORA: %TIME%]
 echo.
 echo              ------------------------------------------------------
-echo               HOSTNAME: %COMPUTERNAME%  USUARIO LOGADO: %USERNAME%
+echo              [HOSTNAME: %COMPUTERNAME%  USUARIO LOGADO: %USERNAME%]
 echo              ------------------------------------------------------
 rem AUTOR EDILSON RODRIGUES DOS DANTOS
 echo.
@@ -16,20 +18,29 @@ echo                  **********************************************
 echo.
 echo.
 echo                  ______________________________
-echo                       1 - BACKUP
-echo                       2 - RESTAURAR BACKUP
+echo                       [1] - BACKUP
+echo                       [2] - RESTAURAR BACKUP
+echo                       [3] - SAIR
 echo.
-rem variavel que pegar a op├º├úo digitada pelo usuario
+rem variavel que pegar a opÃ§Ã£o digitada pelo usuario
 set /p opc=ESCOLHA UMA OPCAO:
+echo           EXEMPLO "C:, D:, E:"
+echo.
 
+
+rem condi‡Æo de verifica‡Æo da op‡Æo escolhido pelo usuario
 if %opc% == 1 goto BACKUP
 if %opc% == 2 goto RESTAURAR
+if %opc% == 3 goto SAIR
+if %opc% GEQ 4 goto INICIO
 
 rem linha de codigo que faz o backup 
 :BACKUP
 echo.
+set /p unidade=DIGITE A UNIDADE QUE ESTA OS DADOS:
 rem entrando na para usuarios
-cd C:\Users
+%unidade%
+cd \Users
 dir
 echo.
 echo DIGITE ABAIXO O LOGIN DO USUARIO
@@ -38,9 +49,9 @@ rem variavel que pega o usuario que sera feito o backup
 set /p user= USUARIO:
 echo.
 echo.
-echo AO CRIAR A PASTA ONDE SERA FEITO O BACKUP NÃO UTILIZAR ESPAÇO NO NOME DA PASTA
+echo AO CRIAR A PASTA ONDE SERA FEITO O BACKUP NÇO UTILIZAR ESPA€O NO NOME DA PASTA
 echo ______________________________________________________________________________
-echo O DIRETORIO NÃO VAI PODER TER ESPAÇO, POIS VAI DAR ERRO
+echo O DIRETORIO NÇO VAI PODER TER ESPA€O, POIS VAI DAR ERRO
 echo ______________________________________________________________________________
 echo DIGITE O DIRETORIO ONDE SERA SALVO OS DADOS DO USUARIO
 echo.
@@ -58,22 +69,24 @@ pause
 cls
 goto INICIO
 
-rem linha de codigo que faz a restaura├º├úo do backup do usuario
+rem linha de codigo que faz a restauraÃ§Ã£o do backup do usuario
 :RESTAURAR
 echo.
+set /p unidade=DIGITE A UNIDADE QUE ESTA OS DADOS:
 rem entrando na para usuarios
-cd C:\Users
+%unidade%
+cd Users
 dir
 echo.
 echo DIGITE ABAIXO O LOGIN DO USUARIO
 echo.
-rem variavel que pega o usuario que sera feito a restaura├º├úo do backup
+rem variavel que pega o usuario que sera feito a restauraÃ§Ã£o do backup
 set /p user= USUARIO:
 echo.
 echo.
-echo AO CRIAR A PASTA ONDE SERA FEITO O BACKUP NÃO UTILIZAR ESPAÇO NO NOME DA PASTA
+echo AO CRIAR A PASTA ONDE SERA FEITO O BACKUP NÇO UTILIZAR ESPA€O NO NOME DA PASTA
 echo ______________________________________________________________________________
-echo O DIRETORIO NÃO VAI PODER TER ESPAÇO, POIS VAI DAR ERRO
+echo O DIRETORIO NÇO VAI PODER TER ESPA€O, POIS VAI DAR ERRO
 echo ______________________________________________________________________________
 echo DIGITE O DIRETORIO ONDE SERA SALVO OS DADOS DO USUARIO
 echo.
@@ -86,7 +99,10 @@ rem comando xcopy que copia os dados salvos para o perfil do usuario
 xcopy %local% %user%  /e /c /y
 echo .
 echo.
-echo REALIZADO A RESTAURAÇÃO DO BACKUP COM SUCESSO!!
+echo REALIZADO A RESTAURA€ÇO DO BACKUP COM SUCESSO!!
 pause
 cls
 goto INICIO
+rem Sai da aplica‡Æo
+:SAIR
+exit
