@@ -24,7 +24,7 @@ echo                       [3] - SAIR
 echo.
 rem variavel que pegar a opÃ§Ã£o digitada pelo usuario
 set /p opc=ESCOLHA UMA OPCAO:
-echo           EXEMPLO "C:, D:, E:"
+
 echo.
 
 
@@ -37,6 +37,7 @@ if %opc% GEQ 4 goto INICIO
 rem linha de codigo que faz o backup 
 :BACKUP
 echo.
+echo           EXEMPLO "C:, D:, E:"
 set /p unidade=DIGITE A UNIDADE QUE ESTA OS DADOS:
 rem entrando na para usuarios
 %unidade%
@@ -72,6 +73,7 @@ goto INICIO
 rem linha de codigo que faz a restauraÃ§Ã£o do backup do usuario
 :RESTAURAR
 echo.
+echo           EXEMPLO "C:, D:, E:"
 set /p unidade=DIGITE A UNIDADE QUE ESTA OS DADOS:
 rem entrando na para usuarios
 %unidade%

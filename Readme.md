@@ -1,3 +1,21 @@
-Este script foi criado para ajudar os analista a salvar dados 
-mais rapido pelo prompt de comando!
-Esta é a primeira versão e estou fazendo testes!
+## Script para realizar backup e restauração de dados de um usuario
+
+Este script foi criado com intuito de ajudar os profissionais de suporte a realizar backup e resturação de dados de um usuario que tem grandes quantitidade de dados.
+
+* [1] - BACKUP
+   * Opção 1 solicita que seja digitado a unidade que esta os dados do colaborador, em seguida ele entra na pasta Users e mostra na tela os usuarios e solicita que seja digitado o usuario que sera feito o backup e depois solicita que seja colocado o diretorio que sera feito o backup, apos incluir o diretorio a copia dos dados ira começar a copia dos dados, ira ocorrer erro se a pasta onde sera salvo os dados estiver com espaço.
+   
+  
+* [2] - RESTAURAR BACKUP
+   * Opção 2 solicita tambem que seja digitado a unidade onde  esta o sistema operacional e em seguida entra na pasta Users e mostra todos os usuario criado no micro e solicita que seja digitado o usuario que voce quer restaurar os dados, apos digitar o usuario e apertar a tecla ENTER sera solicitado que seja digitado o difretorio que esta os backup do usuario, apos digitar o diretrio e apertar ENTER a resturação sera iniciada.
+   
+   
+* [3] - Sair
+   * Opção que fecha o programa
+
+## Comando e Parmêtros utilizado no script
+
+* -> xcopy: Copia arquivos e diretórios, incluindo subdiretórios.
+* -> /c: Ignora erros.
+* -> /e: Copia todos os subdiretórios, mesmo que estejam vazios. 
+* -> /y: Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.(Utilizado somente na restauração dos dados)
