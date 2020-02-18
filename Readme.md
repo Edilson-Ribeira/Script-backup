@@ -20,3 +20,5 @@ Este script foi criado com intuito de ajudar os profissionais de suporte a reali
 * -> /c: Ignora erros.
 * -> /e: Copia todos os subdiretórios, mesmo que estejam vazios. 
 * -> /y: Suprime a solicitação para confirmar que você deseja substituir um arquivo de destino existente.(Utilizado somente na restauração dos dados)
+
+## Obs: Este tipo de script é feito para salvar dados pequenos, abaixo de 100 GB, pois o comando xcopy é limitado e pode apresentar mensagem de memoria insuficiente.
