@@ -235,7 +235,6 @@ rem Sai da aplicação
 :SAIR
 exit
 
-
 rem Realizar backup de drivers do Windows 10
 :DRIVER
 diskpart /s C:\BackupRestauracao\diskp.txt
